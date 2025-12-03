@@ -9,7 +9,7 @@ import time as py_time
 from ursina import (
     Audio,
     Button,
-    Camera,
+    camera,
     Color,
     Entity,
     Sky,
