@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Read Aloud Downloader",
+  "version": "1.0.0",
+  "description": "Automatically download ChatGPT read-aloud audio when you click the read aloud button.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
