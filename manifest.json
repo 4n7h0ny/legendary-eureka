@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Audio Downloader",
+  "version": "1.0.0",
+  "description": "Adds a Download Audio button to ChatGPT Read Aloud messages.",
+  "permissions": [
+    "downloads",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://*.chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ChatGPT Audio Downloader"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://*.chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
